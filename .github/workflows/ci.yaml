@@ -1,0 +1,61 @@
+---
+name: Home Assistant CI
+
+on:
+  push:
+  pull_request_review:
+  check_run:
+    types: [completed]
+
+jobs:
+  lint:
+    name: Lint Repo
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Lint Code Base
+        uses: github/super-linter@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  hatest:
+    name: Test HA Config
+    runs-on: ubuntu-latest
+    needs: lint
+
+    strategy:
+      fail-fast: false
+      matrix:
+        HA_VERSION: [STABLE, RC, DEV]
+      max-parallel: 3
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Home Assistant Configuration Check
+        uses: ludeeus/action-ha-config-check@master
+        with:
+          version: matrix.HA_VERSION
+          config_path: .
+
+  gitflow:
+    name: Gitflow
+    runs-on: ubuntu-16.04
+    needs: hatest
+
+    steps:
+      - uses: Logerfo/gitflow-action@0.0.4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }} # The `GITHUB_TOKEN` secret.
+          release: release/0.0.1 # The `release` branch.
+          dev: develop # The `dev` branch.
+          master: main # The `master` branch.
+          label: gitflow # The pull request label.
+          auto-merge: true # If `true`, will try to automatically merge pull requests. Can also be set to `pull_request_review`, `check_run`, `push`, or a comma-separated combination of these values to only merge when handling the named events.
+          require-merge: false # If an attempted merge fails, the action is considered to have failed.
