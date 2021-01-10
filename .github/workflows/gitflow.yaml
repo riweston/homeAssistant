@@ -9,9 +9,10 @@ on:
     types: [completed]
 
 jobs:
-  build:
+  gitflow:
     name: Gitflow
     runs-on: ubuntu-16.04
+    needs: hatest
     steps:
       - uses: Logerfo/gitflow-action@0.0.4
         with:
