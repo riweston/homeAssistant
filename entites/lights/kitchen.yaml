@@ -1,0 +1,13 @@
+---
+# Light group: Kitchen
+#
+# This light controls all the lights in kitchen.
+#
+# https://www.home-assistant.io/integrations/light.group/
+#
+platform: group
+name: kitchen
+entities:
+  - light.kitchen_ceiling
+  - switch.kitchen_light_worktop_left
+  - switch.kitchen_light_worktop_right

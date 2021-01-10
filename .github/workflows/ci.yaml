@@ -39,4 +39,4 @@ jobs:
         uses: ludeeus/action-ha-config-check@master
         with:
           version: matrix.HA_VERSION
-          config_path: config
+          config_path: .
