@@ -3,6 +3,9 @@ name: Home Assistant CI
 
 on:
   push:
+  pull_request_review:
+  check_run:
+    types: [completed]
 
 jobs:
   lint:
