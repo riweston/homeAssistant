@@ -1,0 +1,42 @@
+---
+name: Home Assistant CI
+
+on:
+  push:
+
+jobs:
+  lint:
+    name: Lint Repo
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Lint Code Base
+        uses: github/super-linter@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  hatest:
+    name: Test HA Config
+    runs-on: ubuntu-latest
+    needs: lint
+
+    strategy:
+      fail-fast: false
+      matrix:
+        HA_VERSION: [STABLE, RC, DEV]
+      max-parallel: 3
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Home Assistant Configuration Check
+        uses: ludeeus/action-ha-config-check@master
+        with:
+          version: matrix.HA_VERSION
+          config_path: config
