@@ -1,0 +1,11 @@
+---
+alias: "Turn off worktop lights with kitchen light"
+trigger:
+  - platform: state
+    entity_id: light.kitchen_ceiling
+    to: "off"
+action:
+  service: switch.turn_off
+  entity_id:
+    - switch.kitchen_light_worktop_left
+    - switch.kitchen_light_worktop_right
