@@ -1,0 +1,11 @@
+---
+alias: "Turn on desk lights in Rich's office"
+trigger:
+  - platform: state
+    entity_id: light.rich_office_ceiling
+    to: "on"
+action:
+  service: switch.turn_on
+  entity_id:
+    - switch.rich_office_desklamp
+    - switch.rich_office_lavalamp
