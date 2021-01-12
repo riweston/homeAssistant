@@ -1,0 +1,52 @@
+---
+esphome:
+  name: esp_rich_office_lavalamp
+  platform: ESP8266
+  board: esp01_1m
+  board_flash_mode: dout
+
+wifi:
+  ssid: !secret wifi_iot_ssid
+  password: !secret wifi_iot_password
+  domain: .iot.riweston.io
+  fast_connect: true
+  ap:
+    ssid: esp_rich_office_lavalamp
+
+captive_portal:
+
+logger:
+
+api:
+
+ota:
+
+web_server:
+  port: 80
+
+sensor:
+  - platform: wifi_signal
+    name: esphome_esp_rich_office_lavalamp_wifi_signal
+    update_interval: 60s
+
+text_sensor:
+  - platform: version
+    name: esphome_esp_rich_office_lavalamp_esphome_version
+
+switch:
+  - platform: restart
+    name: esphome_esp_rich_office_lavalamp_restart
+  - platform: gpio
+    name: other_power_bar
+    id: relay
+    pin: GPIO12
+
+binary_sensor:
+  - platform: gpio
+    id: button
+    pin:
+      number: GPIO0
+      mode: INPUT_PULLUP
+      inverted: true
+    on_press:
+      - switch.toggle: relay
