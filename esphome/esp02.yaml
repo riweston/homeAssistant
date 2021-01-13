@@ -37,7 +37,7 @@ switch:
   - platform: restart
     name: esphome_esp_rich_office_lavalamp_restart
   - platform: gpio
-    name: other_power_bar
+    name: Rich Office LavaLamp
     id: relay
     pin: GPIO12
 

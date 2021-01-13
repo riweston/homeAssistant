@@ -37,7 +37,7 @@ switch:
   - platform: restart
     name: esphome_esp_rich_office_desklamp_restart
   - platform: gpio
-    name: other_power_bar
+    name: Rich Office DeskLamp
     id: relay
     pin: GPIO12
 
