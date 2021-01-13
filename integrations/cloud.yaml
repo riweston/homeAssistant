@@ -6,7 +6,7 @@
 #
 cloud:
   # Customize the Google Assistant integration with the Nabu Casa Cloud
-  alexa_actions:
+  alexa:
     # Entity specific configuration for Google Assistant.
     # These are loaded from a separate directory.
     entity_config: !include_dir_merge_named ../customizations/alexa_assistant
