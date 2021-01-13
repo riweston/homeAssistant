@@ -1,0 +1,29 @@
+---
+# Home Assistant can discover and automatically configure zeroconf/mDNS and UPnP
+# devices on your network. Currently the discovery integration can detect:
+#
+#  * Apple TV
+#  * Belkin WeMo switches
+#  * Bluesound speakers
+#  * Bose Soundtouch speakers
+#  * Denon network receivers
+#  * DLNA DMR enabled devices
+#  * Enigma2 media player
+#  * Frontier Silicon internet radios
+#  * Linn / Openhome
+#  * Logitech Harmony Hub
+#  * Logitech Media Server (Squeezebox)
+#  * NETGEAR routers
+#  * Philips Hue
+#  * SABnzbd downloader
+#  * Samsung SyncThru Printer
+#  * Sonos speakers
+#  * Telldus Live
+#  * Wink
+#  * Yamaha media player
+#  * Yeelight Sunflower bulb
+#  * Xiaomi Gateway (Aqara)
+#
+# https://www.home-assistant.io/integrations/discovery/
+#
+discovery: ~
