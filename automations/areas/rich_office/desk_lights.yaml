@@ -9,3 +9,14 @@ action:
   entity_id:
     - switch.rich_office_desklamp
     - switch.rich_office_lavalamp
+---
+alias: "Turn off desk lights in Rich's office"
+trigger:
+  - platform: state
+    entity_id: light.rich_office_ceiling
+    to: "off"
+action:
+  service: switch.turn_off
+  entity_id:
+    - switch.rich_office_desklamp
+    - switch.rich_office_lavalamp
