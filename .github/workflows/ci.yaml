@@ -42,7 +42,7 @@ jobs:
         uses: frenck/action-home-assistant@v1
         with:
           version: matrix.HA_VERSION
-          config_path: .
+          path: .
 
   gitflow:
     name: Gitflow
