@@ -16,4 +16,6 @@
 #
 # https://www.home-assistant.io/integrations/zwave/
 #
-zwave: ~
+zwave:
+  usb_path: /dev/ttyACM0
+  device_config: !include_dir_list ../entities/zwave
