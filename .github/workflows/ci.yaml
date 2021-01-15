@@ -39,7 +39,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Home Assistant Configuration Check
-        uses: ludeeus/action-ha-config-check@master
+        uses: frenck/action-home-assistant@v1
         with:
           version: matrix.HA_VERSION
           config_path: .
