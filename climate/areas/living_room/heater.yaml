@@ -1,0 +1,4 @@
+platform: generic_thermostat
+name: living_room_thermostat
+heater: switch.living_room_heater
+target_sensor: sensor.living_room_multisensor_temperature

@@ -1,0 +1,29 @@
+alias: Living Room Heater Off
+trigger:
+  - platform: time
+    at: "22:00:00"
+  - platform: homeassistant
+    event: start
+condition:
+  condition: or
+  conditions:
+    - condition: time
+      after: "22:00:00"
+      before: "16:30:00"
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+    - condition: time
+      after: "22:00:00"
+      before: "7:00:00"
+      weekday:
+        - sat
+        - sun
+action:
+  service: climate.set_temperature
+  entity_id: climate.living_room_thermostat
+  data:
+    temperature: 16
