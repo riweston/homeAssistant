@@ -18,4 +18,5 @@
 #
 zwave:
   usb_path: /dev/ttyACM0
-  device_config: !include_dir_list ../entities/zwave
+# Commented out to check on device config
+#  device_config: !include_dir_list ../entities/zwave
