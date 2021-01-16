@@ -18,5 +18,6 @@
 #
 zwave:
   usb_path: /dev/ttyACM0
+  polling_interval: 60000
 # Commented out to check on device config
 #  device_config: !include_dir_list ../entities/zwave
