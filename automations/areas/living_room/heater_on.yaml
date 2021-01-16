@@ -1,9 +1,7 @@
 alias: Living Room Heater On
 trigger:
-  - platform: time
-    at: "05:30:00"
-  - platform: homeassistant
-    event: start
+  platform: time_pattern
+  minutes: "/5"
 condition:
   condition: or
   conditions:
