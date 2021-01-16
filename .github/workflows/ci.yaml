@@ -31,7 +31,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        HA_VERSION: [STABLE, RC, DEV]
+        version: ["stable", "beta", "dev"]
       max-parallel: 3
 
     steps:
@@ -41,7 +41,7 @@ jobs:
       - name: Home Assistant Configuration Check
         uses: frenck/action-home-assistant@v1
         with:
-          version: matrix.HA_VERSION
+          version: "${{ matrix.version }}"
           path: .
 
   gitflow:
