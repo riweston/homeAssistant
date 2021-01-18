@@ -24,18 +24,7 @@ ota:
 web_server:
   port: 80
 
-sensor:
-  - platform: wifi_signal
-    name: esphome_esp_rich_office_lavalamp_wifi_signal
-    update_interval: 60s
-
-text_sensor:
-  - platform: version
-    name: esphome_esp_rich_office_lavalamp_esphome_version
-
 switch:
-  - platform: restart
-    name: esphome_esp_rich_office_lavalamp_restart
   - platform: gpio
     name: Rich Office LavaLamp
     id: relay
