@@ -1,0 +1,13 @@
+---
+# https://www.home-assistant.io/integrations/mqtt/
+mqtt:
+  broker: core-mosquitto
+  port: 1883
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+  birth_message:
+    topic: "hassio/homeassistant/status"
+    payload: "online"
+  will_message:
+    topic: "hassio/homeassistant/status"
+    payload: "offline"
