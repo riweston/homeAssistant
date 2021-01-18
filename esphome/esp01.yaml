@@ -24,6 +24,12 @@ ota:
 web_server:
   port: 80
 
+switch:
+  - platform: gpio
+    name: Rich Office DeskLamp
+    id: relay
+    pin: GPIO12
+
 binary_sensor:
   - platform: gpio
     id: button
