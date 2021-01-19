@@ -42,6 +42,7 @@ jobs:
         uses: frenck/action-home-assistant@v1
         with:
           version: "${{ matrix.version }}"
+          secrets: ./.stubs/secrets.yaml
           path: .
 
   gitflow:
