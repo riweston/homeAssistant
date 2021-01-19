@@ -73,7 +73,7 @@ jobs:
   gitflow:
     name: 🌲 Gitflow
     runs-on: ubuntu-16.04
-    needs: hatest
+    needs: [hatest, esphome]
 
     steps:
       - uses: Logerfo/gitflow-action@0.0.4
