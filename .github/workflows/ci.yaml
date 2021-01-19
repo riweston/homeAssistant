@@ -9,22 +9,22 @@ on:
 
 jobs:
   lint:
-    name: Lint Repo
+    name: 🧹 Lint Repo
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
+      - name: ⤵️ Checkout Code
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
 
-      - name: Lint Code Base
+      - name: 🚀 Lint Code Base
         uses: github/super-linter@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   hatest:
-    name: Test HA Config
+    name: 🧪 Test HA Config
     runs-on: ubuntu-latest
     needs: lint
 
@@ -35,10 +35,10 @@ jobs:
       max-parallel: 3
 
     steps:
-      - name: Checkout Code
+      - name: ⤵️ Checkout Code
         uses: actions/checkout@v2
 
-      - name: Home Assistant Configuration Check
+      - name: 🚀 Home Assistant Configuration Check
         uses: frenck/action-home-assistant@v1
         with:
           version: "${{ matrix.version }}"
@@ -52,12 +52,12 @@ jobs:
       - name: ⤵️ Check out configuration from GitHub
         uses: actions/checkout@v1
 
-      - name: Set up Python 3.7
+      - name: 🐍 Set up Python 3.7
         uses: actions/setup-python@v1
         with:
           python-version: 3.7
 
-      - name: Install dependencies
+      - name: 🔧 Install dependencies
         run: |
           python -m pip install --upgrade pip setuptools wheel
           pip install esphome
@@ -66,12 +66,12 @@ jobs:
       - name: Copy stub files into configuration folder
         run: \cp -R ./.stubs/* ./esphome/
 
-      - name: Run esphome on all files
+      - name: 🚀 Run esphome on all files
         run: |
           for file in $(find ./esphome -type f -name "*.yaml" -not -name "secrets.yaml"); do esphome "${file}" config; done
 
   gitflow:
-    name: Gitflow
+    name: 🌲 Gitflow
     runs-on: ubuntu-16.04
     needs: hatest
 
