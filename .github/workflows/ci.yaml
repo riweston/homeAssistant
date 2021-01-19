@@ -46,6 +46,7 @@ jobs:
           path: .
 
   esphome:
+    name: 🧪 Test ESPHome Config
     runs-on: ubuntu-latest
     needs: lint
     steps:
