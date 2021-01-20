@@ -1,0 +1,15 @@
+---
+alias: "Turn on worktop lights with kitchen light"
+trigger:
+  - platform: state
+    entity_id: light.kitchen_ceiling
+    to: "on"
+condition:
+  condition: sun
+  after: sunset
+  after_offset: "-01:00:00"
+action:
+  service: switch.turn_on
+  entity_id:
+    - switch.kitchen_light_worktop_left
+    - switch.kitchen_light_worktop_right
