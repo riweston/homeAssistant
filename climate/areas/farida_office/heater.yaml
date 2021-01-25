@@ -1,0 +1,4 @@
+platform: generic_thermostat
+name: farida_office_thermostat
+heater: switch.farida_office_heater
+target_sensor: sensor.farida_office_temperature
