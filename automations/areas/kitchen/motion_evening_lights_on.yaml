@@ -2,7 +2,7 @@
 alias: Turn on kitchen light when there is movement
 trigger:
   platform: state
-  entity_id: sensor.kitchen_motion
+  entity_id: binary_sensor.kitchen_motion_occupancy
   to: "on"
 action:
   service: light.turn_on
