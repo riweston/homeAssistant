@@ -1,0 +1,19 @@
+alias: Farida's Office Heater On
+trigger:
+  platform: time_pattern
+  minutes: "/5"
+condition:
+  - condition: time
+    after: "09:30:00"
+    before: "16:30:00"
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+action:
+  service: climate.set_temperature
+  entity_id: climate.living_room_thermostat
+  data:
+    temperature: 22
