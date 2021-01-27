@@ -1,9 +1,16 @@
 ---
 alias: Turn off living room light when there is no movement
 trigger:
-  platform: state
-  entity_id: sensor.living_room_motion
-  to: "off"
+  - platform: state
+    entity_id: sensor.living_room_motion
+    to: "off"
+    for:
+      minutes: 30
+  - platform: state
+    entity_id: sensor.living_room_motion
+    to: "off"
+    for:
+      minutes: 10
 condition:
   condition: or
   conditions:

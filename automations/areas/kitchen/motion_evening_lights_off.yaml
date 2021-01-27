@@ -1,9 +1,18 @@
 ---
 alias: Turn off kitchen light when there is no movement
 trigger:
-  platform: state
-  entity_id: sensor.kitchen_motion
-  to: "off"
+  - platform: state
+    entity_id: sensor.kitchen_motion
+    to: "off"
+    for:
+      minutes: 15
+
+  - platform: state
+    entity_id: sensor.kitchen_motion
+    to: "off"
+    for:
+      minutes: 3
+
 condition:
   condition: or
   conditions:
