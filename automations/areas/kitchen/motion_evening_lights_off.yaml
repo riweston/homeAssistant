@@ -1,0 +1,30 @@
+---
+alias: Turn off kitchen light when there is no movement
+trigger:
+  platform: state
+  entity_id: sensor.kitchen_motion
+  to: "off"
+condition:
+  condition: or
+  conditions:
+    - condition: and
+      conditions:
+        - condition: time
+          after: "07:00:00"
+          before: "23:00:00"
+        - condition: state
+          entity_id: sensor.kitchen_motion
+          for:
+            minutes: 15
+    - condition: and
+      conditions:
+        - condition: time
+          after: "23:00:00"
+          before: "07:00:00"
+        - condition: state
+          entity_id: sensor.kitchen_motion
+          for:
+            minutes: 3
+action:
+  service: light.turn_off
+  entity_id: light.kitchen_ceiling
