@@ -14,6 +14,6 @@ condition:
       - fri
 action:
   service: climate.set_temperature
-  entity_id: climate.living_room_thermostat
+  entity_id: climate.farida_office_thermostat
   data:
     temperature: 22
