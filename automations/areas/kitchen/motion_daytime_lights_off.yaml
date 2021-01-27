@@ -1,5 +1,5 @@
 ---
-alias: Turn off kitchen light when there is no movement
+alias: Kitchen | Motion | Daytime | Light Off
 trigger:
   platform: state
   entity_id: binary_sensor.kitchen_motion_occupancy

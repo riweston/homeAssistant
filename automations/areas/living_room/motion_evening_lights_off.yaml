@@ -1,5 +1,5 @@
 ---
-alias: Turn off living room light when there is no movement
+alias: Living Room | Motion | Evening | Light Off
 trigger:
   platform: state
   entity_id: binary_sensor.living_room_motion_occupancy
