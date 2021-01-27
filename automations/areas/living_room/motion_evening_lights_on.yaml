@@ -1,0 +1,12 @@
+---
+alias: Turn on living room light when there is movement
+trigger:
+  platform: state
+  entity_id: sensor.living_room_motion
+  to: "on"
+action:
+  service: light.turn_on
+  entity_id:
+    - light.living_room_ceiling
+    - light.living_room_huego_left
+    - light.living_room_huego_right
