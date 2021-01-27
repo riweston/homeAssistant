@@ -16,3 +16,21 @@ action:
     - light.living_room_ceiling
     - light.living_room_huego_left
     - light.living_room_huego_right
+---
+alias: Turn off living room light when there is no movement2
+trigger:
+  platform: state
+  entity_id: binary_sensor.living_room_motion_occupancy
+  to: "off"
+  for:
+    minutes: 10
+condition:
+  condition: time
+  after: "05:30:00"
+  before: "23:00:00"
+action:
+  service: light.turn_off
+  entity_id:
+    - light.living_room_ceiling
+    - light.living_room_huego_left
+    - light.living_room_huego_right

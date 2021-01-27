@@ -1,0 +1,18 @@
+---
+alias: "Turn on living room light in the evening"
+trigger:
+  - platform: state
+    entity_id: binary_sensor.hall_sensor_motion
+    to: "off"
+condition:
+  condition: and
+  conditions:
+    - condition: time
+      after: "22:00:00"
+      before: "03:00:00"
+action:
+  service: light.turn_off
+  entity_id:
+    - light.living_room_ceiling
+    - light.living_room_huego_left
+    - light.living_room_huego_right
