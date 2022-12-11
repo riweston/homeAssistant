@@ -33,6 +33,9 @@ api:
 
 ota:
 
+time:
+  - platform: homeassistant
+
 output:
   - platform: gpio
     id: "relay_output"
