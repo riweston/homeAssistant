@@ -6,7 +6,7 @@ substitutions:
   voltage_div: "1925"
 
 esphome:
-  name: esp_living_room_left_radiator
+  name: living_room_radiator_left
   platformio_options:
     board_build.f_cpu: 160000000L
 
@@ -25,7 +25,7 @@ wifi:
   domain: .iot.riweston.io
   fast_connect: true
   ap:
-    ssid: esp_living_room_left_radiator
+    ssid: living_room_radiator_left
 
 logger:
 
