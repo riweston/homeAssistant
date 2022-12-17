@@ -1,3 +1,4 @@
+---
 substitutions:
   device_name: "Radiator Right"
   # Higher value gives lower watt readout
