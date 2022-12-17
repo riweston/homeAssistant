@@ -1,5 +1,5 @@
 substitutions:
-  device_name: "Shelly Plus 1PM"
+  device_name: "Radiator Left"
   # Higher value gives lower watt readout
   current_res: "0.001"
   # Lower value gives lower voltage readout
