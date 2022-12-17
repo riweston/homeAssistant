@@ -9,7 +9,7 @@ substitutions:
   ha_device_type: radiator-right
 
 esphome:
-  name: "${ha_device_type}-${room_name}"
+  name: "${room_name}-${ha_device_type}"
   platformio_options:
     board_build.f_cpu: 160000000L
 
