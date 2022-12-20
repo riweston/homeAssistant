@@ -1,6 +1,7 @@
 ---
 platform: group
 name: Living Room Radiators
+unique_id: living_room_radiators
 entities:
   - switch.radiator_left_relay
   - switch.radiator_right_relay
