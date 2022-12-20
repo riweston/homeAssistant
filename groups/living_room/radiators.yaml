@@ -1,0 +1,7 @@
+---
+group:
+  living_room_radiators:
+    name: Living Room Radiators
+    entities:
+      - switch.radiator_left_relay
+      - switch.radiator_right_relay
