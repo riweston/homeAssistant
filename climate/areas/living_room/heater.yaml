@@ -1,4 +1,5 @@
 platform: generic_thermostat
 name: living_room_thermostat
+unique_id: living_room_thermostat
 heater: group.living_room_radiators
 target_sensor: sensor.living_room_sensor_temperature
