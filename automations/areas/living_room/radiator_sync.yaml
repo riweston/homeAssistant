@@ -3,6 +3,7 @@ alias: Radiator Left sync to Radiator Right
 trigger:
   - platform: state
     entity_id: switch.living_room_radiator_right
+    to:
 conditions: []
 action:
   - service: switch.turn_{{ trigger.to_state.state }}
