@@ -2,7 +2,7 @@
 alias: Turn on living room light when there is movement
 trigger:
   platform: state
-  entity_id: binary_sensor.living_room_motion_occupancy
+  entity_id: binary_sensor.living_room_sensor_motion
   to: "on"
 action:
   service: light.turn_on
