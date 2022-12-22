@@ -1,4 +1,5 @@
 platform: generic_thermostat
 name: farida_office_thermostat
-heater: switch.farida_office_heater
-target_sensor: sensor.farida_office_temperature
+unique_id: farida_office_thermostat
+heater: switch.farida_office_radiator_relay
+target_sensor: sensor.farida_office_temp_temperature

@@ -1,0 +1,5 @@
+platform: generic_thermostat
+name: bathroom_thermostat
+unique_id: bathroom_thermostat
+heater: switch.bathroom_radiator_relay
+target_sensor: sensor.bathroom_temp_temperature
