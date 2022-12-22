@@ -1,0 +1,5 @@
+platform: generic_thermostat
+name: rich_office_thermostat
+unique_id: rich_office_thermostat
+heater: switch.rich_office_radiator_relay
+target_sensor: sensor.rich_office_temp_temperature
