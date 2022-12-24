@@ -5,7 +5,7 @@ trigger:
   entity_id: light.living_room_ceiling_light
   to:
 action:
-  service: switch.turn_{{ trigger.to_state.state }}
+  service: light.turn_{{ trigger.to_state.state }}
   entity_id:
     - light.living_room_huego_left
     - light.living_room_huego_right
