@@ -1,0 +1,7 @@
+---
+platform: mqtt_room
+name: "Rich iPhone"
+device_id: "Rich iPhone"
+state_topic: "espresense/rooms"
+timeout: 5
+away_timeout: 120
