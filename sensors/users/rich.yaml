@@ -5,3 +5,10 @@ device_id: "Rich iPhone"
 state_topic: "espresense/rooms"
 timeout: 5
 away_timeout: 120
+---
+platform: mqtt_room
+name: "Rich Watch"
+device_id: !secret irk_rich_apple_watch
+state_topic: "espresense/rooms"
+timeout: 5
+away_timeout: 120
