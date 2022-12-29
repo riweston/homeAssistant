@@ -1,0 +1,31 @@
+---
+alias: Everyone left the living room
+trigger:
+  - platform: state
+    entity_id: sensor.rich_iphone
+    from: living_room
+    for: 00:03:00
+  - platform: state
+    entity_id: sensor.farida_iphone
+    from: living_room
+    for: 00:03:00
+  - platform: state
+    entity_id: sensor.rich_watch
+    from: living_room
+    for: 00:03:00
+condition:
+  condition: not
+  conditions:
+    - condition: state
+      entity_id: sensor.rich_iphone
+      state: living_room
+    - condition: state
+      entity_id: sensor.farida_iphone
+      state: living_room
+    - condition: state
+      entity_id: sensor.rich_watch
+      state: living_room
+action:
+  service: light.turn_off
+  entity_id:
+    - light.living_room_all_lights
