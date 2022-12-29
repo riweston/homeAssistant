@@ -28,4 +28,8 @@ condition:
 action:
   service: light.turn_off
   entity_id:
-    - light.living_room_all_lights
+    - light.living_room_ceiling_light
+    - light.living_room_huego_left
+    - light.living_room_huego_right
+    - light.living_room_christmas_tree
+    - light.living_room_wled_shell
