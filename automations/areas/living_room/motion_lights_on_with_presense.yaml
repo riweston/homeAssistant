@@ -1,0 +1,26 @@
+---
+alias: Turn on living room light when there is movement but not presense
+trigger:
+  platform: state
+  entity_id: binary_sensor.living_room_sensor_motion
+  to: "on"
+condition:
+  condition: or
+  conditions:
+    - condition: state
+      entity_id: sensor.rich_iphone
+      state: living_room
+    - condition: state
+      entity_id: sensor.farida_iphone
+      state: living_room
+    - condition: state
+      entity_id: sensor.rich_watch
+      state: living_room
+action:
+  service: light.turn_on
+  entity_id:
+    - light.living_room_ceiling_light
+    - light.living_room_huego_left
+    - light.living_room_huego_right
+    - light.living_room_christmas_tree
+    - light.living_room_wled_shell
