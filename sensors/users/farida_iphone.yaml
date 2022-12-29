@@ -1,0 +1,7 @@
+---
+platform: mqtt_room
+name: "Farida iPhone"
+device_id: !secret irk_farida_iphone
+state_topic: "espresense/rooms"
+timeout: 5
+away_timeout: 120
