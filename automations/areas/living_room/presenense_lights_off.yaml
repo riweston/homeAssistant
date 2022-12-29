@@ -4,15 +4,15 @@ trigger:
   - platform: state
     entity_id: sensor.rich_iphone
     from: living_room
-    for: 00:03:00
+    for: 00:00:30
   - platform: state
     entity_id: sensor.farida_iphone
     from: living_room
-    for: 00:03:00
+    for: 00:00:30
   - platform: state
     entity_id: sensor.rich_watch
     from: living_room
-    for: 00:03:00
+    for: 00:00:30
 condition:
   condition: not
   conditions:
