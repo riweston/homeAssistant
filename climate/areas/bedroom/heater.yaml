@@ -1,0 +1,5 @@
+platform: generic_thermostat
+name: bedroom_thermostat
+unique_id: bedroom_thermostat
+heater: switch.bedroom_radiator_relay
+target_sensor: sensor.bedroom_temp_temperature
