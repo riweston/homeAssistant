@@ -6,7 +6,7 @@
 # https://www.home-assistant.io/integrations/light.group/
 #
 platform: group
-name: kitchen
+name: "Kitchen Lights"
 entities:
   - light.kitchen_ceiling
   - switch.kitchen_light_worktop_left
