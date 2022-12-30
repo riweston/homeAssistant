@@ -1,0 +1,31 @@
+---
+alias: Everyone left the kitchen
+trigger:
+  - platform: state
+    entity_id: sensor.rich_iphone
+    from: kitchen
+    for: 00:01:00
+  - platform: state
+    entity_id: sensor.farida_iphone
+    from: kitchen
+    for: 00:01:00
+  - platform: state
+    entity_id: sensor.rich_watch
+    from: kitchen
+    for: 00:01:00
+condition:
+  condition: not
+  conditions:
+    - condition: state
+      entity_id: sensor.rich_iphone
+      state: kitchen
+    - condition: state
+      entity_id: sensor.farida_iphone
+      state: kitchen
+    - condition: state
+      entity_id: sensor.rich_watch
+      state: kitchen
+action:
+  service: light.turn_off
+  entity_id:
+    - light.kitchen_lights
