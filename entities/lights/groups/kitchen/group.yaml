@@ -9,5 +9,5 @@ platform: group
 name: "Kitchen Lights"
 entities:
   - light.kitchen_ceiling
-  - switch.kitchen_light_worktop_left
-  - switch.kitchen_light_worktop_right
+  - light.kitchen_light_worktop_left
+  - light.kitchen_light_worktop_right

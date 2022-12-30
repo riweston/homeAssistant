@@ -4,4 +4,5 @@
 #
 # https://www.home-assistant.io/integrations/light/
 #
-light: !include_dir_list ../entities/lights
+light groups: !include_dir_list ../entities/lights/groups
+light switches: !include_dir_list ../entities/lights/switches
