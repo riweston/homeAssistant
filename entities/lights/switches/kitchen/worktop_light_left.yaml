@@ -1,4 +1,4 @@
 ---
 platform: switch
-name: "Kitchen Worktop Light Left"
+name: "Kitchen Light Worktop Left"
 entity_id: switch.kitchen_light_worktop_left
