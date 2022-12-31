@@ -1,0 +1,7 @@
+---
+platform: mqtt_room
+name: "Farida Watch"
+device_id: !secret irk_farida_apple_watch
+state_topic: "espresense/rooms"
+timeout: 5
+away_timeout: 120
